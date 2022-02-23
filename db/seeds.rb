@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#Rachel Ate It
+b1=Blog.create(name: "Donuts", restaurant: "Duck Donuts", description: "Nothing tastes better than a fresh hot donut with melty gooey frosting topped with drizzles and sprinkles", post: "Will reseed with a blogpost later", image: "/image/Donuts.jpeg")
+b2=Blog.create(name: "Fried Avocado Tacos", restaurant: "Torchy's Tacos", description: "If you haven’t tried Fried Avocado Tacos..well..you haven’t lived!", post: "Will reseed with a blogpost later", image: "/image/Tacos.png")
+b3=Blog.create(name: "Bacon Mac n Cheese", restaurant: "The Leaning Pear", description: "I had the option to eat salad...still went for the Bacon Mac’n’cheese! 🤷🏼‍♀️", post: "Will reseed with a blogpost later", image: "/image/MacNCheese.jpeg")
+b4=Blog.create(name: "Avocado Toast", restaurant: "Maison Marcel Chicago", description: "Avocado toast and drumroll....Purple Cauliflower Grits!!! It 👏🏻 was 👏🏻 AMAZING!", post: "Will reseed with a blogpost later", image: "/image/AvoToast.jpeg")
+b5=Blog.create(name: "Bucatini", restaurant: "Lula Cafe", description: "Pasta for brunch is ALWAYS a good idea. Especially when it’s bucatini in browned butter with feta and garlic 🤤", post: "Will reseed with a blogpost later", image: "/image/Bucatini.jpeg")
+b6=Blog.create(name: "Classic Cheeseburger", restaurant: "Burgerlords", description: "Literally nothing is better than a fat juicy cheeseburger, hot fries, and a thick milkshake. NOTHING. and Burgerlords does it the best.", post: "Will reseed with a blogpost later", image: "/image/Burger.jpeg")
+b7=Blog.create(name: "Scratch Pasta", restaurant: "Sfizio Family", description: "This little scratch pasta place in Paris was such a hole in the wall! We found it less than 2 blocks away from school. So fresh so delish, and under 10€", post: "Will reseed with a blogpost later", image: "/image/FrenchPasta.jpeg")
+b8=Blog.create(name: "Bulgogi Fries", restaurant: "Bandit", description: "Kimchi + Bulgogi fries & mozz sticks?? How could I say no? (Hint...I couldn’t. 😂)", post: "Will reseed with a blogpost later", image: "/image/BulgogiFries.jpeg")
+
+#Rachel Made It
+g1=BakedGood.create(name: "Vanilla Cake", price: 50, image: "/image/BdayCake.jpeg", description: "Nothing is better than a birthday cake! This one has FOUR whole vanilla beans in the sponge, Osmo Salt salted Swiss meringue buttercream, and Maldon Salt salted whipped caramel filling 🤯🤯 HIGHLY recommend trying out this vanilla cake recipe by Philip Khoury 🤤")
+g2=BakedGood.create(name: "Pumpkin Cookies", price: 15, image: "/image/PumpkinCookies.jpeg", description: "Anyday is a good day for my favorite pumpkin cookie recipe! Pumpkin is a year-round dessert, not just fall!")
+g3=BakedGood.create(name: "Red Velvet Cake", price: 55, image: "/image/RedVelvet.jpeg", description: "If you don’t like Red Velvet Cake, then I don’t like you. Especially when it’s made with Nielsen Massey real vanilla bean paste in a whipped cream cream cheese frosting 🍰")
+g4=BakedGood.create(name: "Fruit Pizza", price: 30, image: "/image/FruitPizza.jpeg", description: "Perfect for July 4th (or any time of year for all you fruit lovers). Enjoy this fruit pizza 😍 extra berries please!")
+g5=BakedGood.create(name: "Tiramisu", price: 75, image: "/image/Tiramisu.jpeg", description: "I like my tiramisu extra juicy with lots of cream 🤤 still trying to figure out how Belgioioso Cheese makes their mascarpone cheese so perfectly creamy 🥰")
+g6=BakedGood.create(name: "Vegan Brownies", price: 20, image: "/image/Brownies.jpeg", description: "I’m not vegan...but these brownies are! Tbh...I’ve always been a fan of using real butter/eggs and have never baked vegan. But these brownies are SO good, I may have to rethink things! Thanks to The Big Man's World for the recipe!")
+g7=BakedGood.create(name: "Caramel Macarons", price: 32, image: "/image/CaramelMacaroons.jpeg", description: "Name a better combo than flaky sea salt and caramel...go ahead, I’ll wait! 😉 these crispy on the outside chewy on the inside macarons with a rich, salty caramel filling are DIVINE!")
+g8=BakedGood.create(name: "Pumpkin Cake", price: 17, image: "/image/PumpkinCake.jpeg", description: "Hopping on the Pumpkin Train Express! All aboard! 🚂 call it pumpkin cake, pumpkin bars, or what I prefer- breakfast! This cake is amazing..but what pushes it over the limit is the whipped cream cream cheese frosting made with Nielsen Massey vanilla bean paste 😍🤤")
+g9=BakedGood.create(name: "Madeleines", price: 22, image: "/image/Madeleines.jpeg", description: "I’m in love with these Madeleines 🥰 and adding a little lemon zest to the batter and pairing with homemade raspberry jelly is the bomb 💣 I’m holding on to all the last drops of summer that I can with these little pillows of love 🌞")
+g10=BakedGood.create(name: "Chocolate Chip Cookies", price: 40, image: "/image/Cookie.jpeg", description: "Everyone says they have the best recipe for chocolate chip cookies, and I am no different!🍪 I just can’t get over the crinkly tops and chewy insides 🤤 I have a little secret...these are made with cannabis butter 🍁Shhhhhh!!")
+g11=BakedGood.create(name: "Lemon Curd Tarte", price: 45, image: "/image/LemonTart.jpeg", description: "Tarte au citron is way underrated in my opinion. I used to hate lemon! I think (know) I was crazy back then... or maybe I was just missing this silky lemon curd with the perfect balance of sour and sweet 🤷🏼‍♀️")
