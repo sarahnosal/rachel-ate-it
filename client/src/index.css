@@ -226,3 +226,36 @@ body {
   right: 30px; 
   width: 300px; 
 }
+/* Rachel Made It Page */
+.bakedgoods-list, .blogs-list {
+  list-style-type: none;
+  display: inline-block;
+}
+.foodImage, .blogImage {
+  width: 400px;
+  height: auto;
+  z-index: 7;
+  float: left;
+}
+
+.foodName, .blogName {
+  color:#1D6947;
+  font-family: 'Cormorant SC', serif;
+  font-size: 30px;
+  font-weight: bold;
+  width: auto;
+  padding: 10px;
+  height: 35px;
+  margin-left: 25px;
+}
+.foodDescription, .blogDescription, .blogRestaurant, .foodPrice {
+  font-family: 'Cormorant SC', serif;
+  font-size: 20px;
+  max-width: 600px;
+  color:#1D6947;
+}
+#hr {
+  background-color: #DD798C;
+  height: 1px; 
+  border: 0;
+}

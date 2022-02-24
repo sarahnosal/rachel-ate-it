@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Route} from 'react-router-dom'
 import Carousel from './Carousel'
 import About from './About'
-// import Login from './Login'
+import MadeIt from './MadeIt'
 import Favorites from './Favorites'
 import Typography from '@mui/material/Typography';
+import AteIt from './AteIt'
 import Box from '@mui/material/Box';
-
 
 
 function HomePage({user}) {
@@ -50,6 +50,12 @@ function HomePage({user}) {
                     <Carousel images={blogImages} key={blogs.id} show={4}/> : <p>Blogs Loading....</p>}
                 </div>
 
+            </Route>
+            <Route exact path='/made-it'>
+                <MadeIt bakedGoods={bakedGoods} />
+            </Route>
+            <Route exact path='/ate-it'>
+                <AteIt blogs={blogs} />
             </Route>
             <Route exact path='/about'>
                 <About />
