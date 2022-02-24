@@ -1,15 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-function Header() {
+import Button from '@mui/material/Button';
+
+
+function Header({setUser}) {
+    function handleClick() {
+        fetch('/logout', {
+            method: 'DELETE'
+        })
+        .then((r) => {
+            if (r.ok) {
+                setUser(null)
+            }
+        })
+    }
 
     return (
         <div className='header'>
             <h1 id='title'>Rachel Ate It!</h1>
             <p id='phrase'>...so you know it's good!</p>
-            <Link id='nav-links-button' to='/login'>Login/Signup</Link>
+            <Link id='nav-links-button' to='/home'>
+                <Button
+                    onClick={handleClick}
+                    variant='container'
+                    color='sucess'
+                    sx={{fontFamily: 'Cormorant SC', fontWeight: 'bold'}}>Log Out</Button>
+            </Link>
             <nav className='NavBarItems'>
                 <ul className='nav-menu'>
-                    <Link id='home' to='/' className='nav-links'>Home</Link>
+                    <Link id='home' to='/home' className='nav-links'>Home</Link>
                     <Link id='rachel-made-it' to='/rachel-made-it' className='nav-links'>Rachel Made It</Link>
                     <Link id='rachel-ate-it' to='/rachel-ate-it' className='nav-links'>Rachel Ate It</Link>
                     <Link id='about' to='/about' className='nav-links'>About</Link>

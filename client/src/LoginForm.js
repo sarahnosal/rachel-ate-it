@@ -1,72 +1,81 @@
-import React, { useState } from 'react'
+import * as React from 'react';
+import { useState } from "react";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-function LoginForm({onLogin}) {
+function LoginForm({ setUser }) {
     const [errors, setErrors] = useState(null)
-    const [isLoading, setIsLoading] = useState(false);
     const [credentials, setCredentials] = useState({
-        username: "",
-        password: ""
+        username : "",
+        password : ""
     })
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        setIsLoading(true)
-        fetch('/login', {
-            method: 'POST',
-            headers: {"Content-Type": "application/json"},
+    
+    function handleSubmit (e) {
+        e.preventDefault();
+        fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(credentials)
         })
         .then((r) => {
-            setIsLoading(false)
             if (r.ok) {
-                r.json().then((userData) => onLogin(userData))
-            } else {
-                r.json().then((err) => setErrors(err.errors))
+                r.json().then((userData) => setUser(userData))
+            }
+            else {
+                r.json().then((err) => setErrors(err.error))
             }
         })
-    }
-    function handleChange(e) {
-        setCredentials({
-            ...credentials,
-            [e.target.name] : e.target.value
-        })
-    }
+    };
 
-    return (
+      function handleChange (e) {
+          setCredentials({
+              ...credentials,
+              [e.target.name] : e.target.value
+          })
+      }
+    
+      return (
         <>
-            <Box component='form' noValidate sx={{ mt: 1 }} onSubmit={handleSubmit}>
-                <TextField 
+            <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleSubmit}>
+                <TextField
                     margin="normal"
                     required
                     fullWidth
-                    variant='outlined'
-                    label='username'
-                    name='username'
+                    label="Username"
+                    name="username"
+                    variant="outlined"
                     onChange={handleChange}
-                    value={credentials.username}/>
-                <TextField 
+                    value={credentials.username}
+                />
+                <TextField
                     margin="normal"
                     required
                     fullWidth
-                    variant='outlined'
-                    name='password'
-                    label='password'
+                    name="password"
+                    label="Password"
+                    variant="outlined"
+                    type="password"
                     onChange={handleChange}
-                    value={credentials.password}/>
+                    value={credentials.password}
+                />
                 <Button
-                    variant='contained' 
-                    type='submit' 
-                    sx={{ mt: 3, mb: 2 }}>
-                        {isLoading ? "Loading..." : "Log In"}
+                    type="submit"
+                    variant="contained"
+                    sx={[
+                        {
+                            '&:hover': {
+                                backgroundColor: '#1D6947'
+                            },
+                        },{  backgroundColor: '#DD798C', fontFamily: 'Cormorant SC', fontWeight: 'bold' ,mt: 3, mb: 2 }]}
+                >
+                    Log In
                 </Button>
-                {errors ? errors.map((e) => <Typography key={e} variant="subtitle1" component="h2" gutterBottom sx={{color: "red"}}>{e}</Typography>) : null}
+                {errors ? errors.map((e) => <Typography key={e} variant="subtitle1" component="h2" gutterBottom sx={{color: "red"}}>{e} </Typography>) : null}
             </Box>
         </>
-    )
+      );
 }
 
-export default LoginForm
+export default LoginForm;

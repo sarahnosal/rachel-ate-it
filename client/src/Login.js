@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -6,21 +7,28 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import SignupForm from './SignupForm'
-import LoginForm from './LoginForm'
+import SignupForm from './SignupForm';
+import LoginForm from './LoginForm';
 
-const theme= createTheme() 
 
-function Login({onLogin}){
-    const [showLogin, setShowLogin] = useState(true)
+const theme = createTheme({
+    palette: {
+        background: {
+            default: "F3DFE3"
+        }
+    }
+})
 
-    function handleClick() {
+function Login( { setUser }) {
+    const [showLogin, setShowLogin] = useState(true);
+
+    function handleClick () {
         setShowLogin(!showLogin)
     }
-
-    return(
+    
+    return (
         <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="xs" sx={{textAlign: "center"}}>
+            <Container component="main" maxWidth="xs" sx={{background: '#F0BEC8', textAlign: "center"}}>
             <CssBaseline />
                 <Box
                     sx={{
@@ -30,21 +38,28 @@ function Login({onLogin}){
                     alignItems: 'center',
                     }}
                 >
-                <Typography component="h1" variant="h4" sx={{mt: "10px", mb: "10px"}}>
-                Log in to view more content!
+                <Typography component="h1" variant="h4" sx={{fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', mt: "10px", mb: "10px"}}>
+                Welcome to Rachel Ate It!
                 </Typography>
-                {showLogin ? <LoginForm onLogin={onLogin}/> : <SignupForm onLogin={onLogin}/>}
+                {showLogin ? <LoginForm setUser={setUser}/> : <SignupForm setUser={setUser}/>}
             </Box>
             <Divider/>
-            <Typography component="h2" variant="h6" sx={{ mt: 4}}> 
+            <Typography component="h2" variant="h6" sx={{ fontFamily: 'Alex Brush', color: '#1D6947', fontSize: '30px', mt: 4}}> 
             {showLogin ? "Don't have an account?": "Already have an account?"} 
             </Typography>
-            <Button variant="contained" onClick={handleClick} sx={{ mt: 2, mb: 4 }}>
+            <Button  variant="contained" onClick={handleClick} 
+                sx={[
+                    {
+                        '&:hover': {
+                            backgroundColor: '#1D6947'
+                        },
+                    },
+                    { backgroundColor: '#DD798C', fontWeight: 'bold', fontFamily: 'Cormorant SC', mt: 2, mb: 4 }]}>
                 {showLogin ? "Sign Up" : "Log In"} 
             </Button>
             </Container>
         </ThemeProvider>
-    )
+    );
 }
 
-export default Login
+export default Login;
