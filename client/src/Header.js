@@ -13,6 +13,7 @@ function Header() {
                     <Link id='rachel-made-it' to='/rachel-made-it' className='nav-links'>Rachel Made It</Link>
                     <Link id='rachel-ate-it' to='/rachel-ate-it' className='nav-links'>Rachel Ate It</Link>
                     <Link id='about' to='/about' className='nav-links'>About</Link>
+                    <Link id='favorites' to='/favorites' className='nav-links'>Favorites</Link>
                     
                 </ul>
 
