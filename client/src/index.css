@@ -306,3 +306,41 @@ body {
   padding: 40px;
   display: inline-block;
 }
+#bg-price {
+  font-family: 'Cormorant SC', serif;
+  color: #1D6947;
+  font-size: 30px;
+  padding-top: 10px;
+}
+#bg-description {
+  font-family: 'Cormorant SC', serif;
+  color: #1D6947;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+}
+#bg-reviews {
+  font-family: 'Cormorant SC', serif;
+  color: #1D6947;
+  font-size: 30px;
+  max-width: 600px;
+}
+.review-form {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  color: #1D6947;
+  
+}
+.form-input{
+  display: flex;
+  vertical-align: middle;
+  padding-bottom: 20px;
+  
+}
+.form-buttons{
+  display: flex;
+  position: absolute;
+  left: 38%;
+}

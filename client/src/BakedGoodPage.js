@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import Box from '@mui/material/Box';
 import Modal from './Modal'
-// import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
+import Review from './Review';
 
 
 function BakedGoodPage({user}){
@@ -69,48 +69,62 @@ function BakedGoodPage({user}){
                 <div style={{display: 'flex'}}>
                     <img id='bg-image' src={bakedGood.image} alt={bakedGood.name} />
                     <div>
-                        <p id='bg-price'>Price: {bakedGood.price}</p><br />
+                        <p id='bg-price'>Price: ${bakedGood.price}</p><br />
                         <p id='bg-description'>Description: {bakedGood.description}</p><br />
-                        <Box id='ig-reviews'>
+                        <p id='bg-reviews'>
                             Reviews: 
-                            {
-                                reviews.map((review) => (
-                                    <p id="score">Score: {review.score}</p>
-                                ))
-                            }
-                            {
-                                reviews.map((review) => (
-                                    <p id="comment">Comment: {review.comment}</p>
-                                ))
-                            }
-                            {
-                                reviews.map((review) => (
-                                    <p id="user">User: </p>
-                                ))
-                            }
+                            {reviews.map((review) => (
+                                <Review review={review}/>))}
                             
-                        </Box>
+                            
+                        </p>
                         <Modal open={isOpen}>
                             {errors.map((e)=> <p key={e}>{e}</p>)}
-                            <form onSubmit={onSubmit}>
-                                <p>Leave a review!</p>
-                                <label>Score: </label>
-                                <input
-                                    type='integer'
-                                    value={score}
-                                    onChange={(event) => setScore(event.target.value)}
-                                />
-                                <label>Comment:</label>
-                                <textarea
-                                    type='textarea'
-                                    value={comment}
-                                    onChange={(event) => setComment(event.target.value)}
-                                />
-                                <button type="submit">Submit</button>
+                            <form class='review-form' onSubmit={onSubmit}>
+                                <p style={{marginTop: 0, fontWeight: 'bold'}}>Leave a review!</p>
+                                <div className='form-input'>
+                                    <label style={{textAlign: 'center', marginRight: '5px'}}>Score: </label>
+                                    <input
+                                        style={{marginRight: '5px'}}
+                                        type='integer'
+                                        value={score}
+                                        onChange={(event) => setScore(event.target.value)}
+                                    />
+                                    <label style={{marginBottom: 0, marginRight: '5px'}}>Comment:</label>
+                                    <textarea
+                                        
+                                        type='textarea'
+                                        value={comment}
+                                        onChange={(event) => setComment(event.target.value)}
+                                    />
+                                </div>
                             </form>
-                            <button onClick={() => closeModal()}>Close</button>
+                            <div className='form-buttons'>
+                                <Button sx={[{
+                                        '&:hover': {backgroundColor: '#F0BEC8', 
+                                        border: 1, 
+                                        borderColor: '#DD798C'},
+                                        }, 
+                                        {fontWeight: 'bold', 
+                                        fontFamily: 'Cormorant SC', 
+                                        color: '#1D6947', 
+                                        background: '#DD798C'}]} type="submit">Submit</Button> &nbsp;&nbsp;
+                                <Button sx={[{
+                                    '&:hover': {backgroundColor: '#F0BEC8', 
+                                    border: 1, 
+                                    borderColor: '#DD798C'},
+                                    }, 
+                                    {fontWeight: 'bold', 
+                                    fontFamily: 'Cormorant SC', 
+                                    color: '#1D6947', 
+                                    background: '#DD798C'}]} onClick={() => closeModal()}>Close</Button>
+                            </div>
                         </Modal>
-                        <button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")}>Create Review</button>
+                        <Button sx={[{
+                            '&:hover': {
+                                backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
+                            },
+                        }, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C'}]} onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")}>Create Review</Button>
                     </div>
                     
                 </div>
