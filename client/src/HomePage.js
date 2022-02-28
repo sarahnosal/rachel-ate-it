@@ -6,8 +6,8 @@ import MadeIt from './MadeIt'
 // import Favorites from './Favorites'
 // import Typography from '@mui/material/Typography';
 import AteIt from './AteIt'
-// import Box from '@mui/material/Box';
 import BakedGoodPage from './BakedGoodPage'
+import BlogPage from './BlogPage'
 
 function HomePage({user}) {
     const [blogs, setBlogs] = useState([])
@@ -76,6 +76,9 @@ function HomePage({user}) {
             </Route> */}
             <Route exact path='/made-it/:id'>
                     <BakedGoodPage user={user}/>
+            </Route>
+            <Route exact path='/ate-it/:id'>
+                    <BlogPage user={user} />
             </Route>
 
         </div>

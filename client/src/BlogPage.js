@@ -2,45 +2,42 @@ import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import Modal from './Modal'
 import Button from '@mui/material/Button';
-import Review from './Review';
+import Comment from './Comment';
 
-
-function BakedGoodPage({user}){
+function BlogPage({user}){
     const params= useParams()
-    const [bakedGood, setBakedGood]= useState({})
+    const [blog, setBlog]= useState({})
     const [isOpen, setIsOpen] = useState(false)
-    const [score, setScore] = useState("")
     const [comment, setComment] = useState("")
-    const [reviews, setReviews] = useState([])
+    const [blogComments, setBlogComments] = useState([])
     const [errors, setErrors] = useState([])
-       
+
     useEffect(() => {
-        fetch(`/baked_goods/${params.id}`)
+        fetch(`/blogs/${params.id}`)
         .then(r=>r.json())
         .then(data => {
-            setBakedGood(data)
-            setReviews(data.reviews)
+            setBlog(data)
+            console.log(data)
+            setBlogComments(data.comments)
         })
     }, [params])
 
     function closeModal() {
         setIsOpen(false)
-        setScore("")
         setComment("")
     }
 
     function onSubmit(e){
         e.preventDefault()
-        fetch('/reviews', {
+        fetch('/comments', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                "review": {
-                    baked_good_id: bakedGood.id,
+                "comment": {
+                    blog_id: blog.id,
                     user_id: user.id,
-                    score: score,
                     comment: comment
                 }
             }),
@@ -48,7 +45,7 @@ function BakedGoodPage({user}){
         .then((r) => {
             if (r.ok) {
                 r.json().then((data) => {
-                    setReviews([data, ...reviews])
+                    setBlogComments([data, ...blogComments])
                     closeModal()
                 })
             } else {
@@ -58,38 +55,30 @@ function BakedGoodPage({user}){
             }
         })
     }
-    
-    // const reviews = bakedGood.reviews
 
-    if (reviews != null) {
-        
-        return (
-            <div >
-                <h2 id='bg-title'>{bakedGood.name}</h2><hr />
+    console.log(blog.comments)
+    if (blogComments != null) {
+
+        return(
+            <div>
+                <h2 id='b-title'>{blog.name}</h2><hr />
                 <div style={{display: 'flex'}}>
-                    <img id='bg-image' src={bakedGood.image} alt={bakedGood.name} />
+                    <img id='b-image' src={blog.image} alt={blog.name} />
                     <div>
-                        <p id='bg-price'>Price: ${bakedGood.price}</p><br />
-                        <p id='bg-description'>Description: {bakedGood.description}</p><br />
-                        <p id='bg-reviews'>
-                            Reviews: 
-                            {reviews.map((review) => (
-                                <Review review={review}/>))}
+                        <p id='b-restaurant'>Eat this here: {blog.restaurant}</p><br />
+                        <p id='b-description'>Description: {blog.description}</p><br />
+                        <p id='b-comments'>
+                            Comments: 
+                            {blogComments.map((blogComment) => (
+                                <Comment blogComment={blogComment}/>))}
                             
                             
                         </p>
                         <Modal open={isOpen}>
                             {errors.map((e)=> <p key={e}>{e}</p>)}
-                            <form className='review-form' onSubmit={onSubmit}>
-                                <p style={{marginTop: 0, fontWeight: 'bold'}}>Leave a review!</p>
+                            <form className='comment-form' onSubmit={onSubmit}>
+                                <p style={{marginTop: 0, fontWeight: 'bold'}}>Leave a comment!</p>
                                 <div className='form-input'>
-                                    <label style={{textAlign: 'center', marginRight: '5px'}}>Score: </label>
-                                    <input
-                                        style={{marginRight: '5px'}}
-                                        type='integer'
-                                        value={score}
-                                        onChange={(event) => setScore(event.target.value)}
-                                    />
                                     <label style={{marginBottom: 0, marginRight: '5px'}}>Comment:</label>
                                     <textarea
                                         
@@ -124,15 +113,16 @@ function BakedGoodPage({user}){
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
                             },
-                        }, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C'}]} onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")}>Create Review</Button>
+                        }, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C'}]} onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")}>Leave a Comment</Button>
                     </div>
                     
                 </div>
             </div>
         )
-    } else return (
+    } 
+    else return (
         <div></div>
-    )
-}
+    )}
 
-export default BakedGoodPage
+
+export default BlogPage

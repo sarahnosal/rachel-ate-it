@@ -1,6 +1,6 @@
 #Rachel Ate It
 b1=Blog.create(name: "Donuts", restaurant: "Duck Donuts", description: "Nothing tastes better than a fresh hot donut with melty gooey frosting topped with drizzles and sprinkles", post: "Will reseed with a blogpost later", image: "/image/Donuts.jpeg")
-b2=Blog.create(name: "Fried Avocado Tacos", restaurant: "Torchy's Tacos", description: "If you haven’t tried Fried Avocado Tacos..well..you haven’t lived!", post: "Will reseed with a blogpost later", image: "/image/Tacos.png")
+b2=Blog.create(name: "Lemon Curd Crepe", restaurant: "The Crepe Shop", description: "I died and went to heaven after a bite of this lemon curd crepe 😍 and then washed it down with a vanilla bean latte made w oatly oat milk 🤤", post: "Will reseed with a blogpost later", image: "/image/Tacos.png")
 b3=Blog.create(name: "Bacon Mac n Cheese", restaurant: "The Leaning Pear", description: "I had the option to eat salad...still went for the Bacon Mac’n’cheese! 🤷🏼‍♀️", post: "Will reseed with a blogpost later", image: "/image/MacNCheese.jpeg")
 b4=Blog.create(name: "Avocado Toast", restaurant: "Maison Marcel Chicago", description: "Avocado toast and drumroll....Purple Cauliflower Grits!!! It 👏🏻 was 👏🏻 AMAZING!", post: "Will reseed with a blogpost later", image: "/image/AvoToast.jpeg")
 b5=Blog.create(name: "Bucatini", restaurant: "Lula Cafe", description: "Pasta for brunch is ALWAYS a good idea. Especially when it’s bucatini in browned butter with feta and garlic 🤤", post: "Will reseed with a blogpost later", image: "/image/Bucatini.jpeg")
