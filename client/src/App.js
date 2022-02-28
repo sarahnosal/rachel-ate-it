@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Header setUser={setUser}/>
+      <Header setUser={setUser} user={user}/>
       <HomePage setUser={setUser} user={user}/>
     </>
   );

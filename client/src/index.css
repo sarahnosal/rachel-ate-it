@@ -18,11 +18,29 @@ body {
   z-index: 8;
   font-family: 'Cormorant SC', serif;
 }
+.blurb {
+  font-family: 'Cormorant SC', serif;
+  font-size: 2em;
+  max-width: 800px;
+  padding-left: 30px;
+  color:#DD798C;
+  font-weight: bolder;
+}
+#welcome {
+  font-family: 'Alex Brush', cursive;
+  color:#1D6947;
+  font-weight: bold;
+  font-size: 25px;
+  position: absolute;
+  right: 165px;
+  top: 38px;
+}
 #title {
   font-size: 3em;
   color: #1D6947;
   margin-left: 40px;
   margin-bottom: 0px;
+  font-family: 'Cormorant SC', serif;
 }
 #blog-title {
   color: #1D6947;
@@ -248,9 +266,15 @@ body {
   height: 35px;
   margin-left: 25px;
 }
-.foodDescription, .blogDescription, .blogRestaurant, .foodPrice {
+.foodDescription, .blogDescription, .blogRestaurant, .foodPrice{
   font-family: 'Cormorant SC', serif;
   font-size: 20px;
+  max-width: 600px;
+  color:#1D6947;
+}
+.reviews {
+  font-family: 'Cormorant SC', serif;
+  font-size: 30px;
   max-width: 600px;
   color:#1D6947;
 }
@@ -258,4 +282,27 @@ body {
   background-color: #DD798C;
   height: 1px; 
   border: 0;
+}
+.review-link {
+  color: #1D6947;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #F0BEC8;
+  font-family: 'Cormorant SC', serif;
+  font-size: 25px;
+
+}
+/* Baked Good Page */
+#bg-title {
+  font-size: 3em;
+  color: #1D6947;
+  margin-left: 40px;
+  margin-bottom: 0px;
+  font-family: 'Cormorant SC', serif;
+}
+#bg-image {
+  max-width: 600px;
+  height: auto;
+  padding: 40px;
+  display: inline-block;
 }

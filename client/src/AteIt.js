@@ -8,7 +8,7 @@ function AteIt({blogs}) {
             <h2 id='food-title'>Rachel Ate It</h2>
             <ul className='blogs-list'>
                 {blogs.map((blog) => (
-                   <Box sx={{display: 'inline-flex', alignItems: 'center', padding: '20px'}} className='blogItem'>
+                   <Box key={blog.id} sx={{display: 'inline-flex', alignItems: 'center', padding: '20px'}} className='blogItem'>
                         <img className='blogImage' src={blog.image} alt={blog.name}/><br />
                         <Box sx={{display: 'block', maxWidth: '600px', padding: '25px'}}className='desc'>
                             <span className='blogName'>{blog.name}</span><hr id='hr'/>

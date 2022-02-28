@@ -3,17 +3,25 @@ import { Route} from 'react-router-dom'
 import Carousel from './Carousel'
 import About from './About'
 import MadeIt from './MadeIt'
-import Favorites from './Favorites'
-import Typography from '@mui/material/Typography';
+// import Favorites from './Favorites'
+// import Typography from '@mui/material/Typography';
 import AteIt from './AteIt'
-import Box from '@mui/material/Box';
-
+// import Box from '@mui/material/Box';
+import BakedGoodPage from './BakedGoodPage'
 
 function HomePage({user}) {
     const [blogs, setBlogs] = useState([])
     const [bakedGoods, setBakedGoods] = useState([])
+    const [allUsers, setAllUsers] = useState([])
     
+    useEffect(() => {
+        fetch('/users')
+        .then(r => r.json())
+        .then(data =>
+            setAllUsers(data))
+    },[])
 
+    console.log(allUsers)
 
     useEffect(() => {
         fetch('/blogs')
@@ -30,15 +38,13 @@ function HomePage({user}) {
             setBakedGoods(data)
         })
     },[])
-
     let blogImages = blogs.map(blog => blog.image)
     let bakedGoodImages = bakedGoods.map(bakedGood => bakedGood.image)
-  
-    let favorites = []
 
     return (
         <div >
             <Route exact path='/home'>
+                <p className='blurb'>Weclome to Rachel Ate It! Here you can explore the various baked goods that Rachel has made as well as the highlights of all the delicious dishes she's eaten. </p>
                 <h2 id='food-title'>Rachel Made It!</h2>
                 <div style={{ maxWidth: '100%', marginLeft: 'auto', marginRight: 'auto', marginTop: 10}}>
                     {blogs.length > 0 ?
@@ -60,13 +66,16 @@ function HomePage({user}) {
             <Route exact path='/about'>
                 <About />
             </Route>
-            <Route exact path='/favorites'>
+            {/* <Route exact path='/favorites'>
                 {favorites.length > 0 ? 
                 <Favorites /> : 
                 <Box sx={{textAlign: "center", mt: "20px"}}>
                     <Typography sx={{mb: "5px"}} component="h1" variant="h3">Hello {user.name} </Typography>
                     <Typography component="h2" variant="h5">You have no favorites saved</Typography>
                 </Box>}
+            </Route> */}
+            <Route exact path='/made-it/:id'>
+                    <BakedGoodPage user={user}/>
             </Route>
 
         </div>
