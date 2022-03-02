@@ -82,7 +82,7 @@ function BakedGoodPage({user}){
                             Reviews: 
                             {
                                 reviews.map((review) => (
-                                    <Review review={review}/>))
+                                    <Review review={review} setReviews={setReviews} user={user}/>))
                                 }
                         </Box>
                         <Modal open={isOpen}>

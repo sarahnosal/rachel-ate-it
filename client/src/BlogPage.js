@@ -75,7 +75,7 @@ function BlogPage({user}){
                             Comments:
                             {
                                 comments.map((comment) => (
-                                    <Comment comment={comment} />))
+                                    <Comment comment={comment} user={user} setComments={setComments}/>))
                             }
                         </Box>
                         <Modal open={isOpen}>
