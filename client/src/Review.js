@@ -1,5 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 function Review({review, setReviews, user}) {
     console.log(review)
@@ -24,7 +25,12 @@ function Review({review, setReviews, user}) {
             <span>Score: {review.score}/5</span><br />
             <span>Comment: {review.comment}</span><br />
             <span>By: {review.user}</span>
-            {user.name === review.user ? <button onClick= {() => handleDelete(review.id)}>Delete</button> : null}
+            {user.name === review.user ? <Button variant='contained' sx={[{
+                            '&:hover': {
+                                backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
+                            },
+                        }, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', marginRight: 0, display: 'flex'}]}
+            onClick= {() => handleDelete(review.id)}>Delete</Button> : null}
                                 
             </Box>
             <br />

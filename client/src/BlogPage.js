@@ -65,7 +65,7 @@ function BlogPage({user}){
                     <div>
                         <p id='bp-restaurant'>Restaurant: {blogPost.restaurant} </p><br />
                         <p id='bp-description'>{blogPost.description}</p><br />
-                        <Button sx={[{
+                        <Button variant='contained'sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
                             },
