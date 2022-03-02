@@ -33,7 +33,7 @@ function Header({setUser, user}) {
                     <Link id='rachel-made-it' to='/made-it' className='nav-links'>Rachel Made It</Link>
                     <Link id='rachel-ate-it' to='/ate-it' className='nav-links'>Rachel Ate It</Link>
                     <Link id='about' to='/about' className='nav-links'>About</Link>
-                    <Link id='favorites' to='/favorites' className='nav-links'>Favorites</Link>
+                    <Link id='account' to='/account' className='nav-links'>Account</Link>
                     
                 </ul>
 

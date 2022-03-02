@@ -4,10 +4,10 @@ import { Route} from 'react-router-dom'
 import Carousel from './Carousel'
 import About from './About'
 import MadeIt from './MadeIt'
-// import Favorites from './Favorites'
 import AteIt from './AteIt'
 import BakedGoodPage from './BakedGoodPage'
 import BlogPage from './BlogPage'
+import Account from './Account'
 
 function HomePage({user}) {
     const [blogs, setBlogs] = useState([])
@@ -66,14 +66,9 @@ function HomePage({user}) {
             <Route exact path='/about'>
                 <About />
             </Route>
-            {/* <Route exact path='/favorites'>
-                {favorites.length > 0 ? 
-                <Favorites /> : 
-                <Box sx={{textAlign: "center", mt: "20px"}}>
-                    <Typography sx={{mb: "5px"}} component="h1" variant="h3">Hello {user.name} </Typography>
-                    <Typography component="h2" variant="h5">You have no favorites saved</Typography>
-                </Box>}
-            </Route> */}
+            <Route exact path='/account'>
+                <Account user={user}/> 
+            </Route>
             <Route exact path='/made-it/:id'>
                     <BakedGoodPage user={user}/>
             </Route>

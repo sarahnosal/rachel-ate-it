@@ -292,7 +292,7 @@ body {
   font-size: 25px;
 }
 
-/* Baked Good Page */
+/* Baked Good & Blog Page */
 #bg-title, #bp-title {
   font-size: 3em;
   color: #1D6947;
@@ -321,7 +321,7 @@ body {
   max-width: 600px;
 }
 #bg-reviews, #bp-comments {
-  font-family: 'Cormorant SC', serif;
+  font-family: 'Alex Brush', cursive;
   color: #1D6947;
   font-size: 30px;
   max-width: 600px;

@@ -30,6 +30,14 @@ function BakedGoodPage({user}){
         setComment("")
     }
 
+    function handleUpdateReview(updatedReview){
+        setReviews((reviews) =>
+            reviews.map((review) => {
+                return review.id === updatedReview.id ? updatedReview : review
+            })
+        )
+    }
+
     function onSubmit(e){
         e.preventDefault()
         fetch('/reviews', {
@@ -59,6 +67,8 @@ function BakedGoodPage({user}){
             }
         })
     }
+
+    
     
     // const reviews = bakedGood.reviews
 
@@ -82,7 +92,15 @@ function BakedGoodPage({user}){
                             Reviews: 
                             {
                                 reviews.map((review) => (
-                                    <Review review={review} setReviews={setReviews} user={user}/>))
+                                    <Review  
+                                            review={review} 
+                                            setReviews={setReviews} 
+                                            user={user} closeModal={closeModal}
+                                            onUpdateReview={handleUpdateReview}
+                                            isOpen={isOpen} setIsOpen={setIsOpen}
+                                            score={score} setScore={setScore}
+                                            comment={comment} setComment={setComment}
+                                           />))
                                 }
                         </Box>
                         <Modal open={isOpen}>
