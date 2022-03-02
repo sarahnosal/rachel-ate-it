@@ -293,26 +293,26 @@ body {
 }
 
 /* Baked Good Page */
-#bg-title, #b-title {
+#bg-title, #bp-title {
   font-size: 3em;
   color: #1D6947;
   margin-left: 40px;
   margin-bottom: 0px;
   font-family: 'Cormorant SC', serif;
 }
-#bg-image, #b-image {
-  max-width: 600px;
-  height: auto;
+#bg-image, #bp-image {
+  max-height: 600px;
+  width: auto;
   padding: 40px;
   display: inline-block;
 }
-#bg-price, #b-restaurant {
+#bg-price, #bp-restaurant {
   font-family: 'Cormorant SC', serif;
   color: #1D6947;
   font-size: 30px;
   padding-top: 10px;
 }
-#bg-description, #b-description {
+#bg-description, #bp-description {
   font-family: 'Cormorant SC', serif;
   color: #1D6947;
   font-size: 20px;
@@ -320,7 +320,7 @@ body {
   margin: 0;
   max-width: 600px;
 }
-#bg-reviews, #b-comments {
+#bg-reviews, #bp-comments {
   font-family: 'Cormorant SC', serif;
   color: #1D6947;
   font-size: 30px;

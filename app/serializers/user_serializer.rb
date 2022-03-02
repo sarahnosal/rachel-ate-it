@@ -3,4 +3,6 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :reviews
   has_many :baked_goods
+  has_many :comments
+  has_many :blogs
 end

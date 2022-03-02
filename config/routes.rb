@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  
   resources :comments
   resources :reviews
   resources :users, only: [:index, :create, :destroy]
   resources :baked_goods do
     resources :reviews
   end
-  
   resources :blogs do
     resources :comments
   end
-
+  
   post '/signup', to: 'users#create'
   get 'me', to: 'users#me'
   post 'login', to: 'sessions#create'

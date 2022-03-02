@@ -1,10 +1,10 @@
+
 import React, { useEffect, useState } from 'react'
 import { Route} from 'react-router-dom'
 import Carousel from './Carousel'
 import About from './About'
 import MadeIt from './MadeIt'
 // import Favorites from './Favorites'
-// import Typography from '@mui/material/Typography';
 import AteIt from './AteIt'
 import BakedGoodPage from './BakedGoodPage'
 import BlogPage from './BlogPage'
@@ -78,7 +78,7 @@ function HomePage({user}) {
                     <BakedGoodPage user={user}/>
             </Route>
             <Route exact path='/ate-it/:id'>
-                    <BlogPage user={user} />
+                    <BlogPage user={user}/>
             </Route>
 
         </div>
