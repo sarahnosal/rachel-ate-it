@@ -283,7 +283,7 @@ body {
   height: 1px; 
   border: 0;
 }
-.review-link, .blog-link{
+.review-link, .comment-link{
   color: #1D6947;
   text-decoration: none;
   padding: 10px;
@@ -343,4 +343,9 @@ body {
   display: flex;
   position: absolute;
   left: 38%;
+}
+.comment-buttons{
+  display: flex;
+  position: absolute;
+  left: 32%;
 }

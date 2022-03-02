@@ -6,9 +6,13 @@ const MODAL_STYLES = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  backgroundColor: "#FFF",
+  backgroundColor: "#F3DFE3",
   padding: "50px",
+  paddingTop: '40px',
+  paddingBottom: '80px',
   zIndex: 1000,
+  fontFamily: 'Cormorant SC',
+  fontSize: '20px',
 };
 
 const OVERLAY_STYLES = {
