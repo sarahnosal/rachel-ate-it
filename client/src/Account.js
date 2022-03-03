@@ -27,7 +27,7 @@ function Account({user}){
         return comment.user_id === user.id
     })
 
-    console.log(userReviews)
+    // console.log(userReviews)
     // console.log(user.reviews)
     return(
         <div>

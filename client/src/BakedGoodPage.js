@@ -6,13 +6,13 @@ import Review from './Review'
 import Button from '@mui/material/Button';
 
 
-function BakedGoodPage({user, reviews, setReviews}){
+function BakedGoodPage({user}){
     const params= useParams()
     const [bakedGood, setBakedGood]= useState({})
     const [isOpen, setIsOpen] = useState(false)
     const [score, setScore] = useState("")
     const [comment, setComment] = useState("")
-    // const [reviews, setReviews] = useState([])
+    const [reviews, setReviews] = useState([])
     const [errors, setErrors] = useState([])
        
     useEffect(() => {
@@ -30,13 +30,7 @@ function BakedGoodPage({user, reviews, setReviews}){
         setComment("")
     }
 
-    // function handleUpdateReview(updatedReview){
-    //     setReviews((reviews) =>
-    //         reviews.map((review) => {
-    //             return review.id === updatedReview.id ? updatedReview : review
-    //         })
-    //     )
-    // }
+
 
     function onSubmit(e){
         e.preventDefault()
@@ -57,7 +51,7 @@ function BakedGoodPage({user, reviews, setReviews}){
         .then((r) => {
             if (r.ok) {
                 r.json().then((data) => {
-                    setReviews([data, ...reviews])
+                    setReviews([data,...reviews])
                     closeModal()
                 })
             } else {
@@ -67,10 +61,6 @@ function BakedGoodPage({user, reviews, setReviews}){
             }
         })
     }
-
-    
-    
-    // const reviews = bakedGood.reviews
 
     if (reviews != null) {
         
@@ -96,7 +86,6 @@ function BakedGoodPage({user, reviews, setReviews}){
                                             review={review} 
                                             setReviews={setReviews} 
                                             user={user} closeModal={closeModal}
-                                            // onUpdateReview={handleUpdateReview}
                                             isOpen={isOpen} setIsOpen={setIsOpen}
                                             score={score} setScore={setScore}
                                             comment={comment} setComment={setComment}
