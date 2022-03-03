@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 
 
 function Review({review, setReviews, user}) {
-    console.log(review)
 
     function handleDelete(id){
 

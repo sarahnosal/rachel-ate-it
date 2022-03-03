@@ -6,13 +6,13 @@ import Review from './Review'
 import Button from '@mui/material/Button';
 
 
-function BakedGoodPage({user}){
+function BakedGoodPage({user, reviews, setReviews}){
     const params= useParams()
     const [bakedGood, setBakedGood]= useState({})
     const [isOpen, setIsOpen] = useState(false)
     const [score, setScore] = useState("")
     const [comment, setComment] = useState("")
-    const [reviews, setReviews] = useState([])
+    // const [reviews, setReviews] = useState([])
     const [errors, setErrors] = useState([])
        
     useEffect(() => {
@@ -30,13 +30,13 @@ function BakedGoodPage({user}){
         setComment("")
     }
 
-    function handleUpdateReview(updatedReview){
-        setReviews((reviews) =>
-            reviews.map((review) => {
-                return review.id === updatedReview.id ? updatedReview : review
-            })
-        )
-    }
+    // function handleUpdateReview(updatedReview){
+    //     setReviews((reviews) =>
+    //         reviews.map((review) => {
+    //             return review.id === updatedReview.id ? updatedReview : review
+    //         })
+    //     )
+    // }
 
     function onSubmit(e){
         e.preventDefault()
@@ -80,7 +80,7 @@ function BakedGoodPage({user}){
                 <div style={{display: 'flex'}}>
                     <img id='bg-image' src={bakedGood.image} alt={bakedGood.name} />
                     <div>
-                        <p id='bg-price'>Price: {bakedGood.price}</p><br />
+                        <p id='bg-price'>Price: ${bakedGood.price}</p><br />
                         <p id='bg-description'>Description: {bakedGood.description}</p><br />
                         <Button variant='contained' sx={[{
                             '&:hover': {
@@ -96,7 +96,7 @@ function BakedGoodPage({user}){
                                             review={review} 
                                             setReviews={setReviews} 
                                             user={user} closeModal={closeModal}
-                                            onUpdateReview={handleUpdateReview}
+                                            // onUpdateReview={handleUpdateReview}
                                             isOpen={isOpen} setIsOpen={setIsOpen}
                                             score={score} setScore={setScore}
                                             comment={comment} setComment={setComment}

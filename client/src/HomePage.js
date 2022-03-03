@@ -13,6 +13,14 @@ function HomePage({user}) {
     const [blogs, setBlogs] = useState([])
     const [bakedGoods, setBakedGoods] = useState([])
     const [allUsers, setAllUsers] = useState([])
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        fetch('/reviews')
+        .then(r=> r.json())
+        .then(data =>
+            setReviews(data))
+    }, [])
     
     useEffect(() => {
         fetch('/users')
@@ -21,7 +29,6 @@ function HomePage({user}) {
             setAllUsers(data))
     },[])
 
-    console.log(allUsers)
 
     useEffect(() => {
         fetch('/blogs')
@@ -67,10 +74,10 @@ function HomePage({user}) {
                 <About />
             </Route>
             <Route exact path='/account'>
-                <Account user={user}/> 
+                <Account user={user} reviews={reviews}/> 
             </Route>
             <Route exact path='/made-it/:id'>
-                    <BakedGoodPage user={user}/>
+                    <BakedGoodPage user={user} reviews={reviews} setReviews={setReviews}/>
             </Route>
             <Route exact path='/ate-it/:id'>
                     <BlogPage user={user}/>

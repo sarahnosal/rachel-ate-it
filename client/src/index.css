@@ -349,3 +349,17 @@ body {
   position: absolute;
   left: 32%;
 }
+
+/* Account Page */
+.user-name{
+  color: #1D6947;
+  font-family: 'Cormorant SC', serif;
+  padding-left: 20px;
+  font-size: 30px;
+}
+.account-reviews, .account-comments{
+  color: #1D6947;
+  font-family: 'Cormorant SC', serif;
+  padding-left: 20px;
+  
+}
