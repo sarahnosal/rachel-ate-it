@@ -1,0 +1,103 @@
+@media only screen and (max-width: 900px) {
+    .header {
+        display: inline-block;
+    }
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        max-width: 100px;
+        top: 70px;
+        background: #F0BEC8;
+    }
+    #title {
+        margin-left: 100px;
+        margin-top: 80px;
+        max-width: 75%;
+    }
+    #welcome {
+        position: absolute;
+        left: 10px;
+    }
+    #nav-links-button {
+        position: absolute;
+        right: 0;
+    }
+    .header {
+        width: 100%;
+        height: 450px;
+    }
+    .blurb {
+        font-size: 1em;
+        padding-right: 30px;
+    }
+    .foodImage, .blogImage {
+        max-height: 100px;
+        width: auto;
+        padding: 0px;
+        float: none;
+    }
+    .bakedgoods-list, .blogs-list{
+        padding: 0px;
+    }
+    .review-link, .comment-link {
+        font-size: 1em;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .rachel {
+        width: auto;
+        height: 200px;
+        overflow: none;
+        float: center;
+        border-radius: 50%;
+    }
+    .rachel img {
+        width: auto;
+        height: 200px;
+    }
+    .lol {
+        font-size: 1em;
+        max-width: 150px;
+        position: absolute;
+        right: 10px;
+    }
+    .bio {
+        font-size: 15px;
+        position: absolute;
+        top: 750px;
+        right: 10px;
+        max-width: 200px;
+        padding: 0px;
+    }
+    #contact {
+        font-size: 20px;
+        width: 100%;
+        position: absolute;
+        top: 365px;
+        left: 0px;
+        margin-left: 0;
+        padding-left: 10px;
+    }
+    .email {
+        font-size: 15px;
+        position: absolute;
+        right: 10px;
+        top: 700px;
+    }
+    .ig {
+        font-size: 15px;
+        position: absolute;
+        right: 60px;
+        top:660px;
+    }
+    .socialMediaLinks img {
+        max-height: 40px;
+        max-width: 40px;
+        position: absolute;
+        top: 660px;
+    }
+
+}

@@ -1,4 +1,5 @@
 import './index.css';
+import './mobile.css'
 import React, { useEffect, useState } from 'react'
 import HomePage from './HomePage';
 import Header from './Header';
