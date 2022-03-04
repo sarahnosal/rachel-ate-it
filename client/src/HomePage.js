@@ -23,6 +23,7 @@ function HomePage({user}) {
             setAllUsers(data))
     },[])
 
+    console.log(allUsers)
 
     useEffect(() => {
         fetch('/blogs')
@@ -48,13 +49,13 @@ function HomePage({user}) {
                 <p className='blurb'>Weclome to Rachel Ate It! Here you can explore the various baked goods that Rachel has made as well as the highlights of all the delicious dishes she's eaten. </p>
                 <h2 id='food-title'>Rachel Made It!</h2>
                 <div style={{ maxWidth: '100%', marginLeft: 'auto', marginRight: 'auto', marginTop: 10}}>
-                    {blogs.length > 0 ?
-                    <Carousel images={bakedGoodImages} key={bakedGoods.id} show={4}/> : <p>Baked Goods Loading....</p>}
+                    {bakedGoods.length > 0 ?
+                    <Carousel images={bakedGoodImages} key={bakedGoods.id} show={4} infiniteLoop={true}/> : <p>Baked Goods Loading...</p>}                 
                 </div>
                 <h2 id='blog-title'>Rachel Ate It!</h2>
                 <div style={{ maxWidth: '100%', marginLeft: 'auto', marginRight: 'auto', marginTop: 10}}>
                     {blogs.length > 0 ?
-                    <Carousel images={blogImages} key={blogs.id} show={4}/> : <p>Blogs Loading....</p>}
+                    <Carousel images={blogImages} key={blogs.id} show={4} infiniteLoop={true}/> : <p>Blogs Loading....</p>}
                 </div>
 
             </Route>

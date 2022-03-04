@@ -4,9 +4,9 @@ import HomePage from './HomePage';
 import Header from './Header';
 import Login from './Login'
 
+
 function App() {
   const [user, setUser] = useState(null)
-
   // auto login
   useEffect(() => {
     fetch('/me').then((r) => {
