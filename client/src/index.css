@@ -306,6 +306,9 @@ body {
   padding: 40px;
   display: inline-block;
 }
+.bg-page, .bp-page {
+  display: flex;
+}
 #bg-price, #bp-restaurant {
   font-family: 'Cormorant SC', serif;
   color: #1D6947;

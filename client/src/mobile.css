@@ -117,5 +117,32 @@
         max-width: 200px;
         overflow: hidden;
     }
+    #bg-title, #bp-title {
+        font-size: 1.5em;
+    }
+    #bg-image, #bp-image {
+        max-height: 300px;
+        width: auto;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    #bg-price, #bp-restaurant {
+        font-size: 1em;
+        margin-left: 10px;
+        margin-bottom: 0;
+    }
+    #bg-description, #bp-description {
+        font-size: 1em;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .bg-page, .bp-page {
+        display: inline-block;
+    }
+    #bg-reviews, #bp-comments {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 20px;
+    }
 
 }

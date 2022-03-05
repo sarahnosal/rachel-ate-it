@@ -67,7 +67,7 @@ function BakedGoodPage({user}){
         return (
             <div >
                 <h2 id='bg-title'>{bakedGood.name}</h2><hr />
-                <div style={{display: 'flex'}}>
+                <div className='bg-page' >
                     <img id='bg-image' src={bakedGood.image} alt={bakedGood.name} />
                     <div>
                         <p id='bg-price'>Price: ${bakedGood.price}</p><br />

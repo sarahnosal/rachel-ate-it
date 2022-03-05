@@ -60,7 +60,7 @@ function BlogPage({user}){
         return(
             <div >
                 <h2 id='bp-title'>{blogPost.name}</h2>
-                <div style={{display: 'flex'}}>
+                <div className='bp-page' >
                     <img id='bp-image' src={blogPost.image} alt={blogPost.name}/>
                     <div>
                         <p id='bp-restaurant'>Restaurant: {blogPost.restaurant} </p><br />
