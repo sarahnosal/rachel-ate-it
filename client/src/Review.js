@@ -26,7 +26,24 @@ function Review({review, setReviews, user, errors, onUpdate}) {
             },
             body: JSON.stringify({ 
                 score: formData.score,
-                comment: formData.comment
+            })
+        })
+        .then((r) => r.json())
+        .then(data => {
+            onUpdate(data)
+            closeModal()
+            setFormData("")
+        })
+    }
+    function handleUpdateComment(e){
+        e.preventDefault()
+        fetch(`/reviews/${review.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ 
+                comment: formData.comment,
             })
         })
         .then((r) => r.json())
@@ -110,7 +127,7 @@ function Review({review, setReviews, user, errors, onUpdate}) {
                             },}, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', height: '25px', width: '70px'}]}>Change</Button> : null}
             <Modal open={isOpenComment}>
                             {errors.map((e) => <p key={e}>{e}</p>)}
-                            <form onSubmit={handleUpdateScore}>
+                            <form onSubmit={handleUpdateComment}>
                                 <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center'}}>Update Your Comment</p>
                                 <div className='form-input'>
                                     <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px'}}>Comment: </label>

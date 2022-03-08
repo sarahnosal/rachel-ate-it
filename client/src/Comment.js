@@ -8,7 +8,7 @@ import Modal from './Modal';
 function Comment({comment, setComments, user, errors, onUpdate}) {
     const [isOpen, setIsOpen] = useState(false)
     const [formData, setFormData] = useState({
-        comment: ""
+        bcomment: ""
     })
 
     function closeModal() {
@@ -19,7 +19,6 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
     function handleChange(e) {
         const key= e.target.name
         const value= e.target.value
-        console.log(formData)
         setFormData({...formData, [key]:value})
     }
 
@@ -31,13 +30,12 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ 
-                comment: formData.comment
+                bcomment: formData.bcomment
             })
         })
         .then((r) => r.json())
         .then(data => {
             onUpdate(data)
-            console.log(data)
             closeModal()
             setFormData("")
         })
@@ -60,7 +58,7 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
     return (
         <div>
             <Box sx={{fontFamily: 'Cormorant SC', border: 2, marginTop: '10px', padding: '10px', background: '#F0BEC8'}}>
-            <span>Comment: {comment.comment}</span>{'    '}{user.name === comment.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
+            <span>Comment: {comment.bcomment}</span>{'    '}{user.name === comment.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
                             },}, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', height: '25px', width: '70px'}]}>Change</Button> : null}
@@ -71,9 +69,9 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
                                 <div className='form-input'>
                                     <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px'}}>Comment: </label>
                                     <textarea 
-                                    name='comment'
+                                    name='bcomment'
                                     type='textarea'
-                                    value={formData.comment}
+                                    value={formData.bcomment}
                                     onChange={handleChange}
                                     />
                                 </div>

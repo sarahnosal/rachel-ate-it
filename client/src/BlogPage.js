@@ -44,7 +44,7 @@ function BlogPage({user}){
                 "comment": {
                     blog_id: blogPost.id,
                     user_id: user.id,
-                    comment: bcomment
+                    bcomment: bcomment
                 }
             }),
         })
