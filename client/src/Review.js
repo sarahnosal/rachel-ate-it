@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Modal from './Modal';
 
 
-function Review({review, setReviews, user, errors, setScore, onUpdateScore}) {
+function Review({review, setReviews, user, errors, onUpdate}) {
     const [isOpen, setIsOpen] = useState(false)
     const [formData, setFormData] = useState({
         score: "",
@@ -22,15 +22,17 @@ function Review({review, setReviews, user, errors, setScore, onUpdateScore}) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ score: formData.score })
+            body: JSON.stringify({ 
+                score: formData.score,
+                comment: formData.comment
+            })
         })
         .then((r) => r.json())
         .then(data => {
-            onUpdateScore(data)
+            onUpdate(data)
             closeModal()
             setFormData("")
         })
-
     }
 
     function handleDelete(id){
@@ -53,7 +55,6 @@ function Review({review, setReviews, user, errors, setScore, onUpdateScore}) {
         const key= e.target.name
         const value= e.target.value
         setFormData({...formData, [key]:value})
-
     }
 
     return (
@@ -101,7 +102,48 @@ function Review({review, setReviews, user, errors, setScore, onUpdateScore}) {
                             </form>
             </Modal>
             <br />
-            <span style={{paddingBottom: '3px'}}>Comment: {review.comment}</span><br />
+            <span style={{paddingBottom: '3px'}}>Comment: {review.comment}</span>{'      '}{user.name === review.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
+                            '&:hover': {
+                                backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
+                            },}, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', height: '25px', width: '70px'}]}>Change</Button> : null}
+            <Modal open={isOpen}>
+                            {errors.map((e) => <p key={e}>{e}</p>)}
+                            <form onSubmit={handleUpdateScore}>
+                                <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center'}}>Update Your Comment</p>
+                                <div className='form-input'>
+                                    <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px'}}>Comment: </label>
+                                    <input 
+                                    name='comment'
+                                    type='textarea'
+                                    value={formData.comment}
+                                    onChange={handleChange}
+                                    />
+                                </div>
+                                <div className='update-buttons'>
+                                    <Button sx={[{
+                                                '&:hover': {backgroundColor: '#F0BEC8', 
+                                                border: 1, 
+                                                borderColor: '#DD798C'},
+                                                }, 
+                                                {fontWeight: 'bold', 
+                                                fontFamily: 'Cormorant SC', 
+                                                color: '#1D6947', 
+                                                background: '#DD798C'}]}
+                                    type='submit' >Submit</Button>&nbsp;&nbsp;
+                                    <Button sx={[{
+                                            '&:hover': {backgroundColor: '#F0BEC8', 
+                                            border: 1, 
+                                            borderColor: '#DD798C'},
+                                            }, 
+                                            {fontWeight: 'bold', 
+                                            fontFamily: 'Cormorant SC', 
+                                            color: '#1D6947', 
+                                            background: '#DD798C'}]}
+                                onClick={() => closeModal()} >Close</Button>
+                            </div>
+                            </form>
+            </Modal>
+            <br />
             <span style={{paddingBottom: '10px'}}>By: {review.user}</span><br />
             {user.name === review.user ? <Button variant='contained' sx={[{
                             '&:hover': {

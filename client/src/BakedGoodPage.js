@@ -92,9 +92,8 @@ function BakedGoodPage({user}){
                                             review={review} errors={errors}
                                             setReviews={setReviews} 
                                             user={user}
-                                            score={score} setScore={setScore}
                                             comment={comment} setComment={setComment}
-                                            onUpdateScore={handleUpdate}
+                                            onUpdate={handleUpdate}
                                            />))
                                 }
                         </Box>
