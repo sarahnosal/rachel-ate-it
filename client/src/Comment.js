@@ -57,8 +57,8 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
     }
     return (
         <div>
-            <Box sx={{fontFamily: 'Cormorant SC', border: 2, marginTop: '10px', padding: '10px', background: '#F0BEC8'}}>
-            <span>Comment: {comment.bcomment}</span>{'    '}{user.name === comment.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
+            <Box sx={{fontSize: '20px', fontFamily: 'Cormorant SC', border: 2, marginTop: '10px', padding: '10px', background: '#F0BEC8'}}>
+            <span><b>Comment:</b> {comment.bcomment}</span>{'    '}{user.name === comment.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
                             },}, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', height: '25px', width: '70px'}]}>Change</Button> : null}
@@ -67,7 +67,7 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
                             <form onSubmit={handleUpdateBlogComment}>
                                 <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center'}}>Update Your Comment</p>
                                 <div className='form-input'>
-                                    <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px'}}>Comment: </label>
+                                    <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px', }}>Comment: </label>
                                     <textarea 
                                     name='bcomment'
                                     type='textarea'

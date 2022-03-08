@@ -78,8 +78,8 @@ function Review({review, setReviews, user, errors, onUpdate}) {
 
     return (
         <div>
-            <Box sx={{fontFamily: 'Cormorant SC', border: 2, marginTop: '10px', padding: '10px', background: '#F0BEC8'}}>
-            <span style={{marginBottom: '0px'}}>Score: {review.score}/5</span>{'    '}{user.name === review.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
+            <Box sx={{fontSize: '20px', fontFamily: 'Cormorant SC', border: 2, marginTop: '10px', padding: '10px', background: '#F0BEC8'}}>
+            <span style={{marginBottom: '0px'}}><b>Score:</b> {review.score}/5</span>{'    '}{user.name === review.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
                             },}, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', height: '25px', width: '70px'}]}>Change</Button> : null}
@@ -121,7 +121,7 @@ function Review({review, setReviews, user, errors, onUpdate}) {
                             </form>
             </Modal>
             <br />
-            <span style={{paddingBottom: '3px'}}>Comment: {review.comment}</span>{'      '}{user.name === review.user ? <Button onClick={() => user?setIsOpenComment(!isOpenComment):alert("You must be logged in to leave a review")} variant='contained' sx={[{
+            <span style={{paddingBottom: '3px'}}><b>Comment:</b> {review.comment}</span>{'      '}{user.name === review.user ? <Button onClick={() => user?setIsOpenComment(!isOpenComment):alert("You must be logged in to leave a review")} variant='contained' sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
                             },}, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', height: '25px', width: '70px'}]}>Change</Button> : null}
