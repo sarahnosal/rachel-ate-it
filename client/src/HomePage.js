@@ -23,7 +23,6 @@ function HomePage({user}) {
             setAllUsers(data))
     },[])
 
-    console.log(allUsers)
 
     useEffect(() => {
         fetch('/blogs')

@@ -27,8 +27,7 @@ function Account({user}){
         return comment.user_id === user.id
     })
 
-    // console.log(userReviews)
-    // console.log(user.reviews)
+
     return(
         <div>
             <h2 className='user-name'>Hello {user.name}! Take a look at your account below! </h2>
@@ -62,7 +61,7 @@ function Account({user}){
                                 <img src={comment.image} alt={comment.blog} style={{maxWidth: '80px', height: 'auto'}}/>
                                     <Box sx={{display: 'block', maxWidth: '600px', paddingLeft: '15px'}}>
                                         <span>{comment.blog}</span><br />
-                                        <span>Comment: {comment.comment}</span><br />
+                                        <span>Comment: {comment.bcomment}</span><br />
                                     </Box>
                                 </Box>
                             </Link>

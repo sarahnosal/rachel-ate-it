@@ -69,7 +69,7 @@ function BlogPage({user}){
                     <img id='bp-image' src={blogPost.image} alt={blogPost.name}/>
                     <div>
                         <p id='bp-restaurant'>Restaurant: {blogPost.restaurant} </p><br />
-                        <p id='bp-description'>{blogPost.description}</p><br />
+                        <p id='bp-description'>{blogPost.post}</p><br />
                         <Button variant='contained'sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
