@@ -6,12 +6,14 @@ import Modal from './Modal';
 
 function Review({review, setReviews, user, errors, onUpdate}) {
     const [isOpen, setIsOpen] = useState(false)
+    const [isOpenComment, setIsOpenComment] = useState(false)
     const [formData, setFormData] = useState({
         score: "",
         comment: ""
     })
     function closeModal() {
         setIsOpen(false)
+        setIsOpenComment(false)
         setFormData("")
     }
 
@@ -102,11 +104,11 @@ function Review({review, setReviews, user, errors, onUpdate}) {
                             </form>
             </Modal>
             <br />
-            <span style={{paddingBottom: '3px'}}>Comment: {review.comment}</span>{'      '}{user.name === review.user ? <Button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to leave a review")} variant='contained' sx={[{
+            <span style={{paddingBottom: '3px'}}>Comment: {review.comment}</span>{'      '}{user.name === review.user ? <Button onClick={() => user?setIsOpenComment(!isOpenComment):alert("You must be logged in to leave a review")} variant='contained' sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
                             },}, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C', height: '25px', width: '70px'}]}>Change</Button> : null}
-            <Modal open={isOpen}>
+            <Modal open={isOpenComment}>
                             {errors.map((e) => <p key={e}>{e}</p>)}
                             <form onSubmit={handleUpdateScore}>
                                 <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center'}}>Update Your Comment</p>

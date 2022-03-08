@@ -23,9 +23,9 @@ class CommentsController < ApplicationController
     end
 
     def update
-        review = Review.find_by(id: params[:id])
-        review.update!(review_params)
-        render json: review
+        comment = Comment.find_by(id: params[:id])
+        comment.update!(comment_params)
+        render json: comment
     end
 
     private

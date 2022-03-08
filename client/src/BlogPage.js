@@ -27,7 +27,12 @@ function BlogPage({user}){
         setIsOpen(false)
         setBcomment("")
     }
-
+    function handleUpdate(updatedComment){
+        setComments((comments) => 
+            comments.map((comment) => {
+                return comment.id === updatedComment.id ? updatedComment : comment
+            }))
+    }
     function onSubmit(e){
         e.preventDefault()
         fetch('/comments', {
@@ -75,7 +80,7 @@ function BlogPage({user}){
                             Comments:
                             {
                                 comments.map((comment) => (
-                                    <Comment comment={comment} user={user} setComments={setComments}/>))
+                                    <Comment comment={comment} user={user} setComments={setComments} errors={errors} onUpdate={handleUpdate}/>))
                             }
                         </Box>
                         <Modal open={isOpen}>
