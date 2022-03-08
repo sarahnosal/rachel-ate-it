@@ -163,7 +163,7 @@ function Review({review, setReviews, user, errors, onUpdate}) {
                             </form>
             </Modal>
             <br />
-            <span style={{paddingBottom: '10px'}}>By: {review.user}</span><br />
+            <span style={{paddingBottom: '10px'}}>By: {review.user}</span><br /><br />
             {user.name === review.user ? <Button variant='contained' sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'

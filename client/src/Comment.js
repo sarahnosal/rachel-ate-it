@@ -100,7 +100,7 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
                         </form>
             </Modal>
             <br />
-            <span>By: {comment.user}</span>
+            <span>By: {comment.user}</span><br /><br />
             {user.name === comment.user ? <Button variant='contained' sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'

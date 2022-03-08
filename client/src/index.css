@@ -183,18 +183,13 @@ body {
   width: calc(100% / 4);
 }
 /* About Page */
-.rachel { 
-  position: relative; 
-  width: 600px; 
-  height: 800px; 
-  overflow: hidden; 
-  border-radius: 50%; 
-  margin: 40px;
-  float: left;
-} 
+
 .rachel img { 
+  position: relative;
+  border-radius: 50%;
+  margin: 40px;
   width: auto; 
-  height: 800px;
+  max-height: 800px;
 
 }
 #contact {
