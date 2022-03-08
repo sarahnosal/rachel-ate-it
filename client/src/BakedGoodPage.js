@@ -30,6 +30,12 @@ function BakedGoodPage({user}){
         setComment("")
     }
 
+    function handleUpdate(updatedReview){
+        setReviews((reviews) => 
+            reviews.map((review) => {
+                return review.id === updatedReview.id ? updatedReview : review
+            }))
+    }
 
 
     function onSubmit(e){
@@ -83,12 +89,12 @@ function BakedGoodPage({user}){
                             {
                                 reviews.map((review) => (
                                     <Review  
-                                            review={review} 
+                                            review={review} errors={errors}
                                             setReviews={setReviews} 
-                                            user={user} closeModal={closeModal}
-                                            isOpen={isOpen} setIsOpen={setIsOpen}
+                                            user={user}
                                             score={score} setScore={setScore}
                                             comment={comment} setComment={setComment}
+                                            onUpdateScore={handleUpdate}
                                            />))
                                 }
                         </Box>

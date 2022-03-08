@@ -347,6 +347,11 @@ body {
   position: absolute;
   left: 38%;
 }
+.update-buttons{
+  display: flex;
+  position: absolute;
+  left: 27%;
+}
 .comment-buttons{
   display: flex;
   position: absolute;
