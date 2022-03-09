@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_02_28_111126) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "baked_goods", force: :cascade do |t|
@@ -52,11 +53,12 @@ ActiveRecord::Schema.define(version: 2022_02_28_111126) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.citext "username"
     t.string "name"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
