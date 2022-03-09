@@ -75,7 +75,7 @@ function Comment({comment, setComments, user, errors, onUpdate}) {
                                     onChange={handleChange}
                                     />
                                 </div>
-                                <div className='update-buttons'>
+                                <div className='update-comment-buttons'>
                                     <Button sx={[{
                                                 '&:hover': {backgroundColor: '#F0BEC8', 
                                                 border: 1, 

@@ -19,7 +19,9 @@ function App() {
 
   if (!user) return <Login setUser={setUser}/>
 
-  return (
+ 
+
+  if (user) return (
     <>
       <Header setUser={setUser} user={user}/>
       <HomePage setUser={setUser} user={user}/>

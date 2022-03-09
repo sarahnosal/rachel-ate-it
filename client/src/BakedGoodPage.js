@@ -102,7 +102,7 @@ function BakedGoodPage({user}){
                             <form className='review-form' onSubmit={onSubmit}>
                                 <p style={{marginTop: 0, fontWeight: 'bold'}}>Leave a review!</p>
                                 <div className='form-input'>
-                                    <label style={{textAlign: 'center', marginRight: '5px'}}>Score: </label>
+                                    <label className='score-input'style={{textAlign: 'center', marginRight: '5px'}}>Score: </label>
                                     <input
                                         style={{marginRight: '5px'}}
                                         type='integer'

@@ -31,7 +31,7 @@ function Modal({ open, children }) {
   return ReactDom.createPortal(
     <>
       <div style={OVERLAY_STYLES} />
-      <div style={MODAL_STYLES}>
+      <div className='modal' style={MODAL_STYLES}>
         {children}
       </div>
     </>,

@@ -99,6 +99,7 @@
         max-height: 40px;
         max-width: 40px;
         position: absolute;
+        right: 10px;
         top: 660px;
     }
     #food-title {
@@ -131,18 +132,31 @@
         margin-left: 10px;
         margin-bottom: 0;
     }
-    #bg-description, #bp-description {
+    #bg-description, #bp-post {
         font-size: 1em;
         margin-left: 10px;
         margin-right: 10px;
     }
     .bg-page, .bp-page {
         display: inline-block;
+        margin: 5px;
     }
     #bg-reviews, #bp-comments {
         margin-left: 10px;
         margin-right: 10px;
         font-size: 20px;
     }
-
+    .form-input {
+        display: inline-block;
+    }
+    .form-buttons, .comment-buttons {
+        left: 65px;
+    }
+    .update-buttons {
+        left: 52px;
+    }
+    .update-comment-buttons {
+        position: absolute;
+        left: 65px;
+    }
 }

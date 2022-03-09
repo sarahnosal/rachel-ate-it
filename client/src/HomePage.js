@@ -68,7 +68,7 @@ function HomePage({user}) {
                 <About />
             </Route>
             <Route exact path='/account'>
-                <Account user={user} /> 
+                <Account user={user} allUsers={allUsers}/> 
             </Route>
             <Route exact path='/made-it/:id'>
                     <BakedGoodPage user={user} />
