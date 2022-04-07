@@ -45,7 +45,7 @@ function HomePage({user}) {
     return (
         <div >
             <Route exact path='/home'>
-                <p className='blurb'>Weclome to Rachel Ate It! Here you can explore the various baked goods that Rachel has made as well as the highlights of all the delicious dishes she's eaten. </p>
+                <p className='blurb'>Welcome to Rachel Ate It! Here you can explore the various baked goods that Rachel has made as well as the highlights of all the delicious dishes she's eaten. </p>
                 <h2 id='food-title'>Rachel Made It!</h2>
                 <div style={{ maxWidth: '100%', marginLeft: 'auto', marginRight: 'auto', marginTop: 10}}>
                     {bakedGoods.length > 0 ?
