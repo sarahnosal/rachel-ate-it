@@ -76,7 +76,12 @@ function BakedGoodPage({user}){
                 <div className='bg-page' >
                     <img id='bg-image' src={bakedGood.image} alt={bakedGood.name} />
                     <div>
-                        <p id='bg-price'>Price: ${bakedGood.price}</p><br />
+                        <p id='bg-price'>Price: ${bakedGood.price}</p>
+                        <Button variant='contained'sx={[{
+                            '&:hover': {
+                                backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'
+                            },
+                        }, {fontWeight: 'bold', fontFamily: 'Cormorant SC', color: '#1D6947', background: '#DD798C'}]}>Add to Cart</Button><br />< br/>
                         <p id='bg-description'>Description: {bakedGood.description}</p><br />
                         <Button variant='contained' sx={[{
                             '&:hover': {
