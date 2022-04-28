@@ -76,7 +76,7 @@ function BakedGoodPage({user}){
                 <div className='bg-page' >
                     <img id='bg-image' src={bakedGood.image} alt={bakedGood.name} />
                     <div>
-                        <p id='bg-price'>Price: ${bakedGood.price}</p>
+                        <span id='bg-price'>Price: ${bakedGood.price}</span>&nbsp;&nbsp;&nbsp;
                         <Button variant='contained'sx={[{
                             '&:hover': {
                                 backgroundColor: '#F0BEC8', border: 1, borderColor: '#DD798C'

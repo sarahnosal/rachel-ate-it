@@ -86,9 +86,9 @@ function Review({review, setReviews, user, errors, onUpdate}) {
             <Modal open={isOpen}>
                             {errors.map((e) => <p key={e}>{e}</p>)}
                             <form onSubmit={handleUpdateScore}>
-                                <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center'}}>Update Your Score</p>
+                                <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center', color: '#1D6947'}}>Update Your Score</p>
                                 <div className='form-input'>
-                                    <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px'}}>Score: </label>
+                                    <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px', color: '#1D6947'}}>Score: </label>
                                     <input 
                                     name='score'
                                     type='integer'
@@ -128,9 +128,9 @@ function Review({review, setReviews, user, errors, onUpdate}) {
             <Modal open={isOpenComment}>
                             {errors.map((e) => <p key={e}>{e}</p>)}
                             <form onSubmit={handleUpdateComment}>
-                                <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center'}}>Update Your Comment</p>
+                                <p style={{marginTop: 0, fontWeight: 'bold', textAlign: 'center', color: '#1D6947'}}>Update Your Comment</p>
                                 <div className='form-input'>
-                                    <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px'}}>Comment: </label>
+                                    <label style={{marginBottom: 0, marginRight: '5px', paddingTop: '5px', color: '#1D6947'}}>Comment: </label>
                                     <input 
                                     name='comment'
                                     type='textarea'
