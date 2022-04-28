@@ -12,7 +12,7 @@ function MadeIt({bakedGoods}){
             <ul className='bakedgoods-list'>
                 {bakedGoods.map((bakedGood) => (
                    <Box key={bakedGood.id} sx={{display: 'inline-flex', alignItems: 'center', padding: '20px'}} className='foodItem'>
-                        <img className='foodImage' src={bakedGood.image} alt={bakedGood.name}/><br />
+                        <Link to={`/made-it/${bakedGood.id}`} ><img className='foodImage' src={bakedGood.image} alt={bakedGood.name}/></Link><br />
                         <Box sx={{display: 'block', maxWidth: '600px', padding: '25px'}}className='desc'>
                             <span className='foodName'>{bakedGood.name}</span><hr id='hr'/>
                             <span className='foodPrice'>It's yours for: ${bakedGood.price}</span><br /><br />

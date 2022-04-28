@@ -10,7 +10,7 @@ function AteIt({blogs}) {
             <ul className='blogs-list'>
                 {blogs.map((blog) => (
                    <Box key={blog.id} sx={{display: 'inline-flex', alignItems: 'center', padding: '20px'}} className='blogItem'>
-                        <img className='blogImage' src={blog.image} alt={blog.name}/><br />
+                        <Link to={`/ate-it/${blog.id}`}><img className='blogImage' src={blog.image} alt={blog.name}/></Link><br />
                         <Box sx={{display: 'block', maxWidth: '600px', padding: '25px'}}className='desc'>
                             <span className='blogName'>{blog.name}</span><hr id='hr'/>
                             <span className='blogRestaurant'>Where'd I Get This? {blog.restaurant}</span><br /><br />
